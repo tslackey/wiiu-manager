@@ -1,0 +1,33 @@
+---
+description: Wii U homebrew project steering — always follow these constraints
+alwaysApply: true
+---
+
+# Wii U homebrew manager
+
+This repository prepares an SD card for **Aroma** on one North American black Deluxe Wii U (WUP-101, disc drive). The operator is on **macOS**.
+
+## Authoritative procedure
+
+- Live source of truth for console-side steps: https://wiiu.hacks.guide/
+- Live Aroma packages: https://aroma.foryour.cafe/
+- Re-fetch those pages before giving click-by-click console instructions. Cached docs in `docs/` go stale.
+- Do not reconstruct Haxchi, Coldboot Haxchi, Indexiine, or random 2016–2018 tutorials.
+
+## What this repo is for
+
+- Downloading official Aroma/EnvironmentLoader/NAND-dumper packages
+- FAT32/MBR SD formatting on macOS (`WIIUHB` label, never `wiiu`)
+- Merging zip contents onto the SD root and stripping AppleDouble/`.DS_Store` files
+- Copying NAND dumps off the SD into `backups/nand/`
+- Tracking this console's checklist in `config/console.json`
+
+## What not to do
+
+- Do not write exploits, payloads, or exploit PoCs.
+- Do not add piracy tools, title keys, or links to unauthorized game downloads.
+- Do not treat vWii / Nintendont as part of the first Aroma pass.
+- Do not continue if the black console has no standby LED / will not reach the Wii U Menu.
+- Do not format a disk that `wiiu list-disks` marks internal or larger than a plausible SD card.
+
+Prefer `./scripts/wiiu` for operator actions. Read `AGENTS.md` and `docs/console-profile.md` before changing behavior.

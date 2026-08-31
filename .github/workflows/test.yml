@@ -1,0 +1,20 @@
+name: tests
+
+on:
+  push:
+    branches: [main, "cursor/**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests -v
+      - name: CLI doctor
+        run: chmod +x scripts/wiiu && ./scripts/wiiu doctor && ./scripts/wiiu next

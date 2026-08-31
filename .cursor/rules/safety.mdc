@@ -1,0 +1,18 @@
+---
+description: Safety and legal boundaries for this homebrew repo
+alwaysApply: true
+---
+
+# Safety and legal
+
+Homebrew (unsigned apps, save tools, emulators for dumps of games the owner possesses) is in scope. Piracy is not.
+
+- Nintendo forbids unauthorized modification; this can brick the console and voids warranty/support.
+- Keep NAND dumps (`otp.bin` especially) private and redundant. They are console-unique.
+- PayloadLoader is persistent; a factory reset does not remove it. Point at the official uninstall page rather than inventing a fix.
+- Stable power during NAND dump, PayloadLoader install, and any system write. Do not interrupt.
+- If an error code appears, record it before changing anything else.
+- Hardware: possible PSU failure on this unit; GamePad-on does not mean the console is alive. Optical drive PCB is paired — do not swap it.
+- de_Fuse / soldering is out of scope unless the console is already unrecoverable and the user explicitly asks for recovery research.
+
+When a request needs both a safe SD-side helper and an exploit/PoC, implement only the SD-side helper and refuse the exploit/PoC.

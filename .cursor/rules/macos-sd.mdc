@@ -1,0 +1,20 @@
+---
+description: macOS SD card handling for Wii U Aroma
+alwaysApply: true
+---
+
+# macOS SD cards
+
+The operator runs this laptop (macOS). Scripts must work there. Linux helpers are extra, not the primary path.
+
+Hard rules:
+
+- Filesystem: FAT32, MBR partition map, 32 KiB clusters when the formatter allows it.
+- Volume label: `WIIUHB`. Never `wiiu` / `WIIU` — the official guide says that breaks homebrew.
+- After copy: delete `.DS_Store`, `._*` AppleDouble files, `__MACOSX`, `.Spotlight-V100`, `.Trashes`, `.fseventsd`.
+- Eject with `diskutil eject` / `wiiu eject` before unplugging. Do not yank the card.
+- Finder copy must **Merge** two `wiiu` folders (hold Option if Merge is hidden). The CLI `wiiu stage` / `wiiu copy-sd` already merges.
+- Cards >32 GB: macOS Disk Utility often refuses FAT32. Use `wiiu format-sd` (diskutil / newfs_msdos path), not ExFAT, unless the live Wii U Hacks Guide says otherwise.
+- Lock slider on the SD card must be unlocked or the console reports mount failures / Aroma 150-3030.
+
+Never run `diskutil eraseDisk` against `disk0` or any `Internal` device. `wiiu format-sd` requires `--disk` and matching `--confirm`.

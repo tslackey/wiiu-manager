@@ -1,0 +1,28 @@
+# Local working data — never commit console dumps or downloaded blobs
+downloads/
+staging/
+backups/
+config/console.json
+*.lock.json
+
+# macOS / editor
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.idea/
+.vscode/
+*.pyc
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+
+# NAND / OTP material that must stay private
+*.bin
+mlc.bin.part*
+otp.bin
+seeprom.bin
+slc.bin
+slccmpt.bin

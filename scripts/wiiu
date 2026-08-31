@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# macOS ships an old Bash; keep this wrapper POSIX-friendly.
+set -euo pipefail
+
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+export PYTHONPATH="${ROOT}/src${PYTHONPATH:+:$PYTHONPATH}"
+export WIIU_MANAGER_ROOT="$ROOT"
+
+if command -v python3 >/dev/null 2>&1; then
+  exec python3 -m wiiu_manager "$@"
+fi
+
+echo "python3 is required. On a Mac: xcode-select --install   or   brew install python" >&2
+exit 1
