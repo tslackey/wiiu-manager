@@ -1,0 +1,29 @@
+{
+  "nickname": "black-deluxe",
+  "model": "WUP-101",
+  "region": "NA",
+  "color": "black",
+  "has_disc_drive": true,
+  "firmware": null,
+  "firmware_hint": "North American latest is 5.5.6. Record the value from System Settings -> System Information after the console boots.",
+  "notes": "Possible PSU failure: GamePad can power on independently. Confirm a red standby LED and a boot to the Wii U Menu before any homebrew. Optical drive board is paired to this console — do not swap the drive PCB.",
+  "sd": {
+    "planned_size_gb": 32,
+    "volume_label": "WIIUHB",
+    "filesystem": "FAT32",
+    "allocation_unit_bytes": 32768,
+    "partition_scheme": "MBR"
+  },
+  "progress": {
+    "console_powers_on": false,
+    "firmware_recorded": false,
+    "sd_prepared": false,
+    "entry_point_ran": false,
+    "nand_backed_up": false,
+    "payloadloader_installed": false,
+    "aroma_autoboot": false,
+    "updates_blocked": false,
+    "extras_installed": false,
+    "vwii_modded": false
+  }
+}

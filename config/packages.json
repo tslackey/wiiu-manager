@@ -1,0 +1,73 @@
+{
+  "updated": "2026-08-31",
+  "notes": "Live download URLs. Prefer aroma.foryour.cafe API endpoints over pinned GitHub asset URLs so Aroma updates flow through. GitHub extras use the releases/latest API.",
+  "authoritative_guide": "https://wiiu.hacks.guide/",
+  "aroma_site": "https://aroma.foryour.cafe/",
+  "profiles": {
+    "base": {
+      "description": "Minimum SD contents for the current Aroma guide: payloads + Base Aroma.",
+      "packages": ["aroma-payloads", "aroma-base"]
+    },
+    "recommended": {
+      "description": "Base plus the extra apps/plugins the official finalizing-setup page recommends.",
+      "packages": [
+        "aroma-payloads",
+        "aroma-base",
+        "aroma-extras",
+        "savemii",
+        "hb-appstore"
+      ]
+    },
+    "pretendo": {
+      "description": "Optional Pretendo/Inkay plugin only. Do not install unless you intend to use Pretendo Network.",
+      "packages": ["inkay"]
+    }
+  },
+  "packages": {
+    "aroma-payloads": {
+      "kind": "aroma-api",
+      "profile": "base",
+      "description": "EnvironmentLoader + NAND dumper payloads (official Aroma 'Download Payloads').",
+      "url": "https://aroma.foryour.cafe/api/download?packages=environmentloader,wiiu-nanddumper-payload",
+      "filename": "aroma-payloads.zip"
+    },
+    "aroma-base": {
+      "kind": "aroma-api",
+      "profile": "base",
+      "description": "Base Aroma environment, AromaUpdater, PayloadLoaderInstaller.",
+      "url": "https://aroma.foryour.cafe/api/download/base",
+      "filename": "aroma-base.zip"
+    },
+    "aroma-extras": {
+      "kind": "aroma-api",
+      "profile": "recommended",
+      "description": "Bloopair, FTPiiU, SDCafiine, Screenshot, SwipSwapMe from aroma.foryour.cafe.",
+      "url": "https://aroma.foryour.cafe/api/download?packages=bloopair,ftpiiu,sdcafiine,screenshotplugin,swipswapme",
+      "filename": "aroma-extras.zip"
+    },
+    "inkay": {
+      "kind": "aroma-api",
+      "profile": "optional",
+      "description": "Pretendo Network plugin. Optional; skip for a first Aroma install.",
+      "url": "https://aroma.foryour.cafe/api/download?packages=inkay",
+      "filename": "inkay.zip"
+    },
+    "savemii": {
+      "kind": "github-release",
+      "profile": "recommended",
+      "description": "SaveMii ProcessMod (Aroma) — Wii U / vWii save manager.",
+      "repo": "w3irDv/savemii",
+      "asset_prefix": "SaveMiiProcessMod-Aroma",
+      "asset_suffix": ".zip",
+      "filename": "savemii-aroma.zip"
+    },
+    "hb-appstore": {
+      "kind": "github-release",
+      "profile": "recommended",
+      "description": "Homebrew App Store SD extract (wiiu-extracttosd.zip).",
+      "repo": "fortheusers/hb-appstore",
+      "asset_name": "wiiu-extracttosd.zip",
+      "filename": "hb-appstore-wiiu.zip"
+    }
+  }
+}
